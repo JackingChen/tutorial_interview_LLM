@@ -1,0 +1,7 @@
+torch
+transformers
+addict
+pandas
+datasets
+rouge-score
+peft
