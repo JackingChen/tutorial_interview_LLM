@@ -19,6 +19,7 @@ This repository is a hands-on tutorial and interview-style project focused on fi
 
 
 📁 Project Structure
+```
 tutorial_interview_LLM/
 ├── data/                      # Dataset for fine-tuning
 ├── fine-tuned-llama/         # Output directory for fine-tuned models
@@ -27,23 +28,38 @@ tutorial_interview_LLM/
 ├── test_2.py                 # Additional test script
 ├── requirements.txt          # Python dependencies
 └── README.md                 # Project documentation
+```
 🚀 Getting Started
 1. Clone the Repository
-
+```
+git clone https://github.com/JackingChen/tutorial_interview_LLM.git
+cd tutorial_interview_LLM
+```
 2. Install Dependencies
-
+```
+pip install -r requirements.txt
+```
 3. Load the Tiny-LLaMA2 Model
-The model is stored locally in the tiny-llama2/ directory. To load and run it, use the main.py script:
-
 
 This script uses the transformers library to load the model and tokenizer from the local path:
 
+```
+from transformers import AutoTokenizer, AutoModelForCausalLM
+
+model_path = "./tiny-llama2"
+tokenizer = AutoTokenizer.from_pretrained(model_path)
+model = AutoModelForCausalLM.from_pretrained(model_path)
+
+```
 
 4. Run Inference
 Once the model is loaded, you can input a prompt and generate a response:
 
-
-🧪 Testing
-You can also run test_2.py to validate model behavior or test specific prompts.
+```
+prompt = "Explain the concept of overfitting in machine learning."
+inputs = tokenizer(prompt, return_tensors="pt")
+outputs = model.generate(**inputs, max_new_tokens=100)
+print(tokenizer.decode(outputs[0], skip_special_tokens=True))
+```
 
 
