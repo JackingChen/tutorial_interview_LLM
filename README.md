@@ -1,21 +1,6 @@
 🧠 tutorial_interview_LLM
+
 This repository is a hands-on tutorial and interview-style project focused on fine-tuning and deploying a lightweight LLM (Tiny-LLaMA2) for instruction-following and debiasing tasks. It includes code for model loading, inference, and evaluation.
-
-## The interview process and feedback checklist
-| question                                                                                                                                                | feedback                                                                       |
-|---------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------|
-| Research                                                                                                                                                |                                                                                |
-| Talk about your current research                                                                                                                        |                                                                                |
-| Whats the thesis statement of this work                                                                                                                 | can he form research statement                                                 |
-| How do you measure the performance                                                                                                                      | can he design methods to quantify performance and justify his thesis statement |
-| what's the novelty of this paper                                                                                                                        | does he know the novelty                                                       |
-| Code                                                                                                                                                    |                                                                                |
-| You are asked to finetune tiny llama to follow instructions or chat with user, you can use google, please start                                         | Can he train a LLM                                                             |
-| Now I need to finetune LLM so that it can help me rephrase some biased sentences to debiased one. You are given this dataset, please use it to finetune | Can he do the preprocessing                                                    |
-| Deploying a ML service                                                                                                                                  |                                                                                |
-| Now you need to deliver the ML model to your customer, what will you do                                                                                 | he has to provide actionable items for product delivering                      |
-
-
 
 
 📁 Project Structure
@@ -61,5 +46,21 @@ inputs = tokenizer(prompt, return_tensors="pt")
 outputs = model.generate(**inputs, max_new_tokens=100)
 print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 ```
+
+
+#### The interview process and feedback checklist
+| question                                                                                                                                                | feedback                                                                       |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------|
+| Research                                                                                                                                                |                                                                                |
+| Talk about your current research                                                                                                                        |                                                                                |
+| Whats the thesis statement of this work                                                                                                                 | can he form research statement                                                 |
+| How do you measure the performance                                                                                                                      | can he design methods to quantify performance and justify his thesis statement |
+| what's the novelty of this paper                                                                                                                        | does he know the novelty                                                       |
+| Code                                                                                                                                                    |                                                                                |
+| You are asked to finetune tiny llama to follow instructions or chat with user, you can use google, please start                                         | Can he train a LLM                                                             |
+| Now I need to finetune LLM so that it can help me rephrase some biased sentences to debiased one. You are given this dataset, please use it to finetune | Can he do the preprocessing                                                    |
+| Deploying a ML service                                                                                                                                  |                                                                                |
+| Now you need to deliver the ML model to your customer, what will you do                                                                                 | he has to provide actionable items for product delivering                      |
+
 
 
